@@ -33,13 +33,14 @@ def main():
         y = 0
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((y,j))
+            y += -1
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((y,1))
+            y += 1
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,y))
+            j += -1
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1,y))
+            j += 2
+        kk_rct.move_ip((j,y))
         screen.blit(kk_img, kk_rct)
         pg.display.update()
         tmr += 1        
